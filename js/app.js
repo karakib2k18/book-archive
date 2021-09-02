@@ -54,23 +54,26 @@ const displaySearchResult = (data) => {
             div.classList.add("col");
 
 
+            //ternary operator for image changing
+            const imageUrl = book?.cover_i ? `https://covers.openlibrary.org/b/id/${book?.cover_i}-M.jpg`
+                : "https://islandpress.org/sites/default/files/default_book_cover_2015.jpg" ;
+
             //displayin all data using template string
             div.innerHTML = `
         <div class="card h-100">
-            <img src = " https://covers.openlibrary.org/b/id/${book.cover_i ? book.cover_i : 7322602
-                }-M.jpg " class="img-fluid" alt="image not found">
+            <img src = ${imageUrl} class="img-fluid" alt="image not found">
             <div class="card-body">
                 <h5 class="card-title mb-3">Book Title: ${book.title ? book.title : " title Not Found"
                 }</h5>
-                 <p class="card-text"> Book Author: ${book.author_name ? book.author_name : "author_name not Found"
+                 <p class="card-text">Author Name: ${book.author_name ? book.author_name : "author_name not Found"
                 }</p>
-                 <p class="card-text"> Book First Publish Year: ${book.first_publish_year
+                 <p class="card-text">First Publish Year: ${book.first_publish_year
                     ? book.first_publish_year
                     : "first_publish_year not found"
                 }</p>
-                <p class="card-text"> Book publisher: ${book.publisher ? book.publisher : "publisher name not Found"
+                <p class="card-text">Book publisher: ${book.publisher ? book.publisher : "publisher name not Found"
                 }</p>
-                <p class="card-text"> Language : ${book.language ? book.language : "Language not Found"
+                <p class="card-text">Language : ${book.language ? book.language : "Language not Found"
                 }</p>
             
             </div>
@@ -80,6 +83,3 @@ const displaySearchResult = (data) => {
         });
    }
 };
-
-// its optional
-// //if need to show a single details using click>> onclick="loadMealDetail(${book.cover_i})"
