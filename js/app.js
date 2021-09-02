@@ -10,9 +10,9 @@ const searchBook = () => {
     const searchID = document.getElementById("search-field");
     const searchText = searchID.value;
     searchID.value = '';
-    if (searchText == '') {
-        
-    //if no results found
+
+        //if no results found
+    if (searchText === '') {
         displayError();
 
     } else {
@@ -39,7 +39,7 @@ const displayError = () => {
 //this is for displayin all data
 const displaySearchResult = (data) => {
     const searchResult = document.getElementById("search-result");
-    if ((data.numFound) == 0) {
+    if ((data.numFound) === 0) {
         //no results found
         displayError();
     } else {
