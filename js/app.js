@@ -49,7 +49,7 @@ const displaySearchResult = (data) => {
 
         //loop for getting all data from database using arrow function and forEach loop
         const books = data.docs;
-        books.slice(0,40).forEach((book) => {
+        books.slice(0,39).forEach((book) => {
             const div = document.createElement("div");
             div.classList.add("col");
 
