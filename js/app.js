@@ -44,20 +44,21 @@ const displaySearchResult = (data) => {
         displayError();
     } else {
         //total length and spinner none
-        document.getElementById("books-numbers").innerText = `Total Books Found ${data.numFound}`;
+        document.getElementById("books-numbers").innerText = `Total Books Found: ${data.numFound}`;
         document.getElementById('spinner').style.display = 'none';
 
         //loop for getting all data from database using arrow function and forEach loop
         const books = data.docs;
-        books.forEach((book) => {
+        books.slice(0,40).forEach((book) => {
             const div = document.createElement("div");
             div.classList.add("col");
 
+
             //displayin all data using template string
             div.innerHTML = `
-        <div onclick="loadMealDetail(${book.cover_i})" class="card h-100">
-            <img src = " https://covers.openlibrary.org/b/id/${book?.cover_i
-                }-S.jpg " class="img-fluid img-thumbnail " alt="...">
+        <div class="card h-100">
+            <img src = " https://covers.openlibrary.org/b/id/${book.cover_i
+                }-S.jpg " class="img-fluid" alt="...">
             <div class="card-body">
                 <h5 class="card-title mb-3">Book Title: ${book.title ? book.title : " title Not Found"
                 }</h5>
@@ -79,3 +80,6 @@ const displaySearchResult = (data) => {
         });
    }
 };
+
+// its optional
+// //if need to show a single details using click>> onclick="loadMealDetail(${book.cover_i})"
