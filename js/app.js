@@ -57,8 +57,8 @@ const displaySearchResult = (data) => {
             //displayin all data using template string
             div.innerHTML = `
         <div class="card h-100">
-            <img src = " https://covers.openlibrary.org/b/id/${book.cover_i
-                }-M.jpg " class="img-fluid" alt="...">
+            <img src = " https://covers.openlibrary.org/b/id/${book.cover_i ? book.cover_i : 7322602
+                }-M.jpg " class="img-fluid" alt="image not found">
             <div class="card-body">
                 <h5 class="card-title mb-3">Book Title: ${book.title ? book.title : " title Not Found"
                 }</h5>
