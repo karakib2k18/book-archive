@@ -60,8 +60,8 @@ const displaySearchResult = (data) => {
 
             //displayin all data using template string
             div.innerHTML = `
-        <div class="card h-100">
-            <img src = ${imageUrl} class="img-fluid" alt="image not found">
+        <div class="card ">
+            <img src = ${imageUrl} class="img-fluid" alt="image not found" style="height: 380px;">
             <div class="card-body">
                 <h5 class="card-title mb-3">Book Title: ${book.title ? book.title : " title Not Found"
                 }</h5>
